@@ -17,7 +17,6 @@ export default function ChartsData({data}){
  function getGitLanguages(){
      if(username){
        me.userStats((err,stat)=>{
-            // console.log(err||stat);
             if(stat)setLanguages(stat);
         })  
     }}
@@ -52,9 +51,9 @@ useEffect(()=>{
  
 },[data.repos_url])
 return <div className="chart-data">
-  <PieChart languages={languages}/>
-  <BarChart repoData={repoData}/>
-  <DoughnutChart repoData={repoData}/>
+ {languages && <PieChart languages={languages}/>} 
+ {languages && <BarChart repoData={repoData}/>} 
+ {languages && <DoughnutChart repoData={repoData}/>} 
 </div>
 }
 

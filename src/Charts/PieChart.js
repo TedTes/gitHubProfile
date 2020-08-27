@@ -3,6 +3,7 @@ import {Chart} from 'react-chartjs-2';
 
 
 export default function PieChart({languages}){
+    console.log(languages);
     const pieCanvasRef=useRef(null);
     const [pieChart,setPieChart]=useState({})
 
