@@ -1,8 +1,8 @@
 import React ,{useState,useEffect} from 'react';
 import './app.css';
 import Header from './Header.js';
-import ChartsData from './ChartsData.js';
-import Repos from './Repos.js';
+import ChartsData from './Charts/ChartsData.js';
+import Repos from './Charts/Repos.js';
 import axios from 'axios';
 import {useRouteMatch} from 'react-router-dom';
 
@@ -19,9 +19,9 @@ useEffect(()=>{
 },[match.params.name])
  return (
  <div className="app">
-    <Header data={data}/>
-    <ChartsData data={data}/>
-    <Repos  data={data}/>
+    {data && <Header data={data}/>}
+   {data && <ChartsData data={data}/>}
+    {data && <Repos  data={data}/> }
    </div>
      );
     }

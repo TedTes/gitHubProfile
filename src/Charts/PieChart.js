@@ -1,9 +1,9 @@
+
 import React,{useRef,useEffect,useState} from 'react';
 import {Chart} from 'react-chartjs-2';
 
 
 export default function PieChart({languages}){
-    console.log(languages);
     const pieCanvasRef=useRef(null);
     const [pieChart,setPieChart]=useState({})
 
@@ -44,8 +44,8 @@ export default function PieChart({languages}){
        ); 
     }
       return<div>
-          <div className="pieChart">
-          <canvas id="pie-chart" className="pie-chart" ref={pieCanvasRef}  value={pieChart} width="190" height="190" />
+          <div className="chart-card">
+          <canvas id="pie-chart"  ref={pieCanvasRef}  value={pieChart} width="290" height="290" />
         </div>
          </div>
 }

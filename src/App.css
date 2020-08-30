@@ -3,6 +3,9 @@ body {
   margin:0;
   background:white;
 }
+li{
+  list-style:none;
+}
 .header{
   background:#1b262c;
   height:100vh;
@@ -25,12 +28,17 @@ img{
   height:150px;
   border-radius:50%;
 }
-.pieChart{
+.chart-card{
   width:300px;
-  height:310px;
-  /* border:solid black 2px; */
+  height:210px;
+  border:solid black 2px;
   margin:3em 2em ;
   padding:1.4em;
+}
+.donut-chart{
+  /* background:red; */
+  width:300px;
+  height:270px;
 }
 .bar-chart{
   width:300px;
@@ -39,4 +47,21 @@ img{
 .chart-data{
   display:flex;
 
+}
+ul{
+  width:100%;
+  border:solid 2px black;
+}
+.repo-container{
+  padding:1.3em;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.repo-container .card{
+  display:flex;
+  flex-direction: column;
+width:300px;
+height:150px;
+margin:.2em;
+background:grey;
 }

@@ -1,13 +1,12 @@
 import React,{useRef,useState,useEffect} from 'react';
 import {Chart} from 'react-chartjs-2';
-
+import colorsObj from '../colors.js'
 export default function BarChart({repoData}){
      const barCanvasRef=useRef(null)
      const[barChart,setBarChart]=useState();
      const LIMIT=5;
     useEffect(()=>{
-    
-        const barObj=barCanvasRef.current;
+       const barObj=barCanvasRef.current;
        const ctx=barObj.getContext('2d')
        //sort repo
        if(repoData.length!==undefined){
@@ -18,17 +17,23 @@ export default function BarChart({repoData}){
        }
   
  },[repoData])
+
 function drawBarChart(ctx,topStaredRepo){
-    // console.log("from draw")
-    // console.log(topStaredRepo);
+  const colorObj=Object.values(colorsObj)
+  const colors=colorObj.map(obj=>obj.color)
+                 .filter(color=>color)
+                .sort(()=>(Math.random() - Math.random()))
+                .slice(0, LIMIT);
+
    let staredRepo= topStaredRepo.map(dta=>dta.stargazers_count)
    let labels=topStaredRepo.map(dta=>dta.name)
- 
+   
     let data={
         labels,
         datasets: [{
             label:'first dataset',
             categoryPercentage: 0.3,
+            backgroundColor:colors,
             barPercentage: .9,
             // barCategoryGap:300,
             barThickness: 30,
@@ -57,7 +62,7 @@ setBarChart(new Chart(ctx, {
 }));
 }
     
-return<div className="bar-chart">
-        <canvas id="bar-chart" ref={barCanvasRef} value={barChart} width="290" height="100"></canvas>
+return<div className="chart-card">
+        <canvas id="bar-chart" ref={barCanvasRef} value={barChart} width="300" height="300"></canvas>
     </div>
 }
