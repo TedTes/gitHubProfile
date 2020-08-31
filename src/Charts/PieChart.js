@@ -33,6 +33,7 @@ export default function PieChart({languages}){
        setPieChart(new Chart(ctx, {
             type: 'pie',
             data: data,
+            responsive:true,
             options: {
                 maintainAspectRatio: false ,
                 legend:{
@@ -43,9 +44,11 @@ export default function PieChart({languages}){
         })
        ); 
     }
-      return<div>
-          <div className="chart-card">
-          <canvas id="pie-chart"  ref={pieCanvasRef}  value={pieChart} width="290" height="290" />
+      return<div className="chart-card">
+            <h3>Top Languages</h3>
+            <div>
+            <canvas id="pie-chart"  ref={pieCanvasRef}  value={pieChart} />
+            </div>
+        
         </div>
-         </div>
 }

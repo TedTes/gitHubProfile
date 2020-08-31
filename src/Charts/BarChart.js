@@ -31,11 +31,7 @@ function drawBarChart(ctx,topStaredRepo){
     let data={
         labels,
         datasets: [{
-            label:'first dataset',
-            categoryPercentage: 0.3,
             backgroundColor:colors,
-            barPercentage: .9,
-            // barCategoryGap:300,
             barThickness: 30,
             data: staredRepo
         }],
@@ -43,6 +39,9 @@ function drawBarChart(ctx,topStaredRepo){
     };
     let options={
             maintainAspectRatio: false,
+            legend:{
+              display:false
+            },
             scales: {
                 yAxes: [{
                   ticks: {
@@ -51,7 +50,7 @@ function drawBarChart(ctx,topStaredRepo){
                 }]
               },
               tooltips:{
-                  cornerRadius:3
+                  // cornerRadius:3
               }
     }
 
@@ -63,6 +62,9 @@ setBarChart(new Chart(ctx, {
 }
     
 return<div className="chart-card">
-        <canvas id="bar-chart" ref={barCanvasRef} value={barChart} width="300" height="300"></canvas>
-    </div>
+      <h3>Most Starred</h3>
+      <div>
+      <canvas id="bar-chart" ref={barCanvasRef} value={barChart}></canvas>
+     </div>
+       </div>
 }

@@ -52,9 +52,10 @@ export default function DoughnutChart({repoData}){
   
    }
    
-  return<div>
-          <div className="chart-card">
-          <canvas ref={donutRef} value={donutChart} id="donut-chart"  width="290" height="290"> </canvas> 
+  return<div className="chart-card">
+    <h3>Stars per Language</h3>
+    <div>
+    <canvas ref={donutRef} value={donutChart} id="donut-chart" > </canvas> 
+     </div>
         </div>
-      </div>
 }

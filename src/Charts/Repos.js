@@ -4,7 +4,6 @@ export default function Repos({repoData}){
    const[rdata,setData]=useState({});
  useEffect(()=>{
       if(repoData){
-         console.log(repoData);
          if(repoData.length!==undefined){
             const topRepos= repoData
             .sort((a,b)=>(b.stargazers_count-a.stargazers_count))
@@ -18,6 +17,7 @@ export default function Repos({repoData}){
    },[repoData])
 
 return<div className="repo-container">
+        <h3 style={{color:"black"}}> Top Repos</h3>
         {rdata.length&&rdata.map((dta,index)=>
         <div className="card" key={index}>
            <span>{dta.name}</span>
