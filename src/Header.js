@@ -6,17 +6,18 @@ export default function Header({data}){
        <div className="profile">
          <img src={avatar_url} alt=""/>
          <div><h1>{name}</h1></div>
-         <div><h3><a href="/">@{login}</a></h3></div>
+         <div><h3><a href={`https://github.com/${login}`}>@{login}</a></h3></div>
        <div className="bio-status">
         <h4><span>Followers</span>{followers}</h4>
         <h4><span>Following</span>{following}</h4>
         <h4><span>Repos</span>{public_repos}</h4>
         </div>
-        <div className="company">
-        <span>{location}</span>
-        <span><i class="far fa-building"></i>{company}</span>
-        <span>{created_at}</span>
-        </div>
+        <ul>
+          <li><span><i class="far fa-compass"></i></span>{location} </li>
+          <li><span><i class="far fa-building"></i></span>{company}</li>
+          <li><span><i class="far fa-calendar-alt"></i></span> {created_at}</li>
+        
+        </ul>
         </div>
     </div>
 }

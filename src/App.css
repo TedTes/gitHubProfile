@@ -6,13 +6,11 @@ margin:0;
 color:white;
 opacity:.5em;
 font-family: 'Nunito', sans-serif;
+background:#fafafa;
   }
-ul{
-    width:100%;
-    border:solid 2px black;
- }
 li{
   list-style:none;
+  width:90px;
 }
 .header{
   background:#1b262c;
@@ -26,6 +24,11 @@ width:400px;
 margin:0 auto;
 padding-top:3em;
 }
+.profile a{
+  color:#07689f;
+  cursor:pointer;
+  font-weight:bold;
+}
 .profile div {
   padding:.6em;
   height:1.5em;
@@ -33,25 +36,38 @@ padding-top:3em;
 }
 .bio-status h4{
 width:100px;
-height:70px;
+height:65px;
 display:flex;
 flex-direction:column;
 padding:.3em;
 align-items:center;
 text-align:center;
-opacity:.8;
-border:solid .6px #dbdbdb;
+opacity:.7;
+/* border:solid .3px #dbdbdb;1b262c */
+background:#222831;
+
 margin-right:.8em;
-font-size:1.4em;
+font-size:1.3em;
 }
-.company span{
-  width:175px;
-  margin:5em .8em;
+.profile ul{
+  display:flex;
+  width:470px;
+  margin-top:5em;
   padding-top:1em;
-  border:solid 2px white;
+  margin-right:.8em;
+  /* border:solid 2px white; */
   padding-right:0;
 
 }
+.profile ul li:nth-child(2){
+  width:135px;
+  margin-right:.8em;
+}
+.profile ul li:nth-child(3){
+  width:220px;
+  margin-right:.8em;
+}
+
 .bio h4{
   margin-right:.7em;
   background:red;
@@ -113,11 +129,12 @@ right:4em;
  margin-top:-6em;
 }
 .repo-container{
-  /* border:solid 2px black; */
+
   display:flex;
   flex-wrap:wrap;
   margin:0 auto;
   width:1110px;
+  background:#fafafa;
 
 }
 .repo-container .repo-cards
@@ -128,20 +145,17 @@ display:grid;
 width:325px;
 height:130px;
 margin:.5em;
-background:#fafafa;
+background:white;
 color:black;
 border-radius: 6px;
 padding-top:1em;
-}
-.repo-cards span:nth-child(1){
-  font-size:1.5em;
 }
 .sub-repo {
   display:flex;
   justify-content: space-between;
   align-items:center;
-  font-size:.7em;
+  font-size:.8em;
 }
 i{
-  padding-right:.5em;
+  padding-right:.3em;
 }
