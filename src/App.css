@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 body {
 padding:0;
 margin:0;
 color:white;
 opacity:.5em;
+font-family: 'Nunito', sans-serif;
   }
 ul{
     width:100%;
@@ -15,18 +18,43 @@ li{
   background:#1b262c;
   height:100vh;
 }
-.profile-bio{
+.profile{
 display:flex;
 flex-direction:column;
 align-items:center;
 width:400px;
 margin:0 auto;
-padding-top:4em;
+padding-top:3em;
 }
-.profile-bio div {
+.profile div {
   padding:.6em;
   height:1.5em;
   display:flex;
+}
+.bio-status h4{
+width:100px;
+height:70px;
+display:flex;
+flex-direction:column;
+padding:.3em;
+align-items:center;
+text-align:center;
+opacity:.8;
+border:solid .6px #dbdbdb;
+margin-right:.8em;
+font-size:1.4em;
+}
+.company span{
+  width:175px;
+  margin:5em .8em;
+  padding-top:1em;
+  border:solid 2px white;
+  padding-right:0;
+
+}
+.bio h4{
+  margin-right:.7em;
+  background:red;
 }
 img {
   width:150px;
@@ -49,8 +77,9 @@ img {
 .chart-card > div{
 height:270px;
 margin-top:3em;
-margin-left:-2em
+margin-left:-2em;
 }
+
 
 .chart-card > h3{
   position:relative;
@@ -84,16 +113,35 @@ right:4em;
  margin-top:-6em;
 }
 .repo-container{
-  padding:1.3em;
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  /* border:solid 2px black; */
+  display:flex;
+  flex-wrap:wrap;
+  margin:0 auto;
+  width:1110px;
+
 }
-.repo-container .card
+.repo-container .repo-cards
 {
-display:flex;
-flex-direction: column;
-width:300px;
-height:150px;
-margin:.2em;
-background:grey;
+ 
+  padding:.6em .8em;
+display:grid;
+width:325px;
+height:130px;
+margin:.5em;
+background:#fafafa;
+color:black;
+border-radius: 6px;
+padding-top:1em;
+}
+.repo-cards span:nth-child(1){
+  font-size:1.5em;
+}
+.sub-repo {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  font-size:.7em;
+}
+i{
+  padding-right:.5em;
 }

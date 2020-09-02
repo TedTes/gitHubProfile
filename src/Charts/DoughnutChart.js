@@ -47,7 +47,7 @@ export default function DoughnutChart({repoData}){
         maintainAspectRatio: false ,
         legend:{
             position:'right',
-             }
+           }
     }}));
   
    }

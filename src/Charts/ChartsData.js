@@ -55,7 +55,7 @@ useEffect(()=>{
 },[data.repos_url])
 return <div>
  <div className="chart-data">
-   <div className="cards" >
+   <div className="cards">
    { languages && <PieChart  languages={languages}/>} 
  {repoData && <BarChart   repoData={repoData}/>} 
  {repoData && <DoughnutChart repoData={repoData}/>} 
