@@ -15,7 +15,8 @@ export default function Repos({repoData}){
    },[repoData])
 
 return<div className="repo-container">
-        {rdata.length&&rdata.map((dta,index)=>
+  
+  {rdata.length&&rdata.map((dta,index)=>
         <div className="repo-cards" key={index}>
            <span>{dta.name}</span>
            <span>{dta.description}</span>
@@ -27,6 +28,7 @@ return<div className="repo-container">
            </div>
       </div>
         )}
+         
  </div>
    }
 

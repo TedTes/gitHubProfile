@@ -9,7 +9,7 @@ export default function Home() {
    history.push(`/profile/${inputRef.current.value}`)
     }
   return (
-      <div className="">
+      <div className="index">
        <div> <input  type="text" ref={inputRef}/>
       <button onClick={handleClick}>Find</button></div>
     </div>

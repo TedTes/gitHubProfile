@@ -114,7 +114,7 @@ margin-left:-2em;
   opacity:.8;
 }
 .chart-data {
-  background:white;
+  background:#fafafa;
   position:relative;
  height:500px;
  text-align:center;
@@ -129,7 +129,7 @@ right:4em;
  margin-top:-6em;
 }
 .repo-container{
-
+position:relative;
   display:flex;
   flex-wrap:wrap;
   margin:0 auto;
