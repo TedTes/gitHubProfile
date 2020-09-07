@@ -7,7 +7,7 @@ import axios from 'axios';
 import {useRouteMatch} from 'react-router-dom';
 
 function Profile(){
-  const[data,setData]=useState({});
+  const[data,setData]=useState();
   const match=useRouteMatch();
   const access_token="59b554618fcf4e17443291e1cfa8f0020d44df1b";
 useEffect(()=>{
@@ -15,14 +15,18 @@ useEffect(()=>{
 {
   headers:{'Authorization':`token${access_token}`}
 } )
- .then(response=>setData(response.data))
+ .then(response=>{
+   if(response.data.public_repos!==0)
+  setData(response.data)
+  })
 },[match.params.name])
  return (
- <div className="app">
-    {data && <Header data={data}/>}
-   {data && <ChartsData data={data}/>}
-    {data && <Repos  data={data}/> }
-   </div>
+   data? (<div>
+   {data && <Header data={data}/>}
+    {data && <ChartsData data={data}/>}
+     {data && <Repos  data={data}/> }
+    </div>):(<h4 className="no-repo">No Repos Yet!</h4>)
+
      );
     }
     

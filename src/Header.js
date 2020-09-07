@@ -13,9 +13,9 @@ export default function Header({data}){
         <h4><span>Repos</span>{public_repos}</h4>
         </div>
         <ul>
-          <li><span><i class="far fa-compass"></i></span>{location} </li>
-          <li><span><i class="far fa-building"></i></span>{company}</li>
-          <li><span><i class="far fa-calendar-alt"></i></span> {created_at}</li>
+          <li><span><i className="far fa-compass"></i></span>{location} </li>
+          <li><span><i className="far fa-building"></i></span>{company}</li>
+          <li><span><i className="far fa-calendar-alt"></i></span> {created_at}</li>
         
         </ul>
         </div>

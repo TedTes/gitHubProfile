@@ -12,9 +12,42 @@ li{
   list-style:none;
   width:90px;
 }
+.home{
+  background:#1b262c;
+  height:100vh;
+  position:relative;
+  padding-top:4em;
+}
+.home-main{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:absolute;
+  top:150px;
+  right:40%;
+}
+.home-main input{
+  padding:.6em .9em;
+  width:180px;
+  border-radius:10px;
+  outline:none;
+  height:20px;
+  border:solid .3em white;
+
+}
 .header{
   background:#1b262c;
   height:100vh;
+}
+.no-repo{
+  background:#1b262c;
+  height:72.2vh;
+margin:0 auto;
+overflow:hidden;
+/* display:grid; */
+text-align:center;
+padding-top:5em;
+font-size:2em;
 }
 .profile{
 display:flex;
@@ -43,9 +76,7 @@ padding:.3em;
 align-items:center;
 text-align:center;
 opacity:.7;
-/* border:solid .3px #dbdbdb;1b262c */
 background:#222831;
-
 margin-right:.8em;
 font-size:1.3em;
 }
@@ -139,8 +170,7 @@ position:relative;
 }
 .repo-container .repo-cards
 {
- 
-  padding:.6em .8em;
+ padding:.6em .8em;
 display:grid;
 width:325px;
 height:130px;
@@ -157,5 +187,5 @@ padding-top:1em;
   font-size:.8em;
 }
 i{
-  padding-right:.3em;
+margin-bottom:.4em;
 }
