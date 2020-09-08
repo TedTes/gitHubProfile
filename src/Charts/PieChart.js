@@ -54,7 +54,7 @@ export default function PieChart({languages}){
       return<div className="chart-card">
             <h3>Top Languages</h3>
             <div>
-           {!isEmpty?<canvas id="pie-chart"  ref={pieCanvasRef}  value={pieChart} />:<span className="no-chart-data">Oops No Languages!</span>}
+           {!isEmpty?<canvas id="pie-chart"  ref={pieCanvasRef}  value={pieChart} />:<span className="no-chart-data">Oops No Top Languages!</span>}
             </div>
         
         </div>
