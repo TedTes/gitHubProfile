@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/style.css';
 export default function Header({data}){
 
     const{name,login,followers,following,public_repos,location,company,avatar_url,created_at}=data

@@ -1,5 +1,5 @@
 import React ,{useState,useEffect} from 'react';
-import './app.css';
+import './styles/style.css';
 import Header from './Header.js';
 import ChartsData from './Charts/ChartsData.js';
 import Repos from './Charts/Repos.js';
