@@ -7,6 +7,7 @@ import colors from '../colors.js'
 export default function DoughnutChart({repoData}){
   const donutRef=useRef(null);
   const[donutChart,setDonutChart]=useState({});
+  const[isEmpty,setEmpty]=useState(false)
 
    useEffect(()=>{
     function getDonut(){
@@ -39,23 +40,26 @@ export default function DoughnutChart({repoData}){
   
       labels: usedLangs
   };
-
+   staredSum.length!==0?
     setDonutChart(new Chart(ctx, {
       type: 'doughnut',
       data: data,
       options: {
         maintainAspectRatio: false ,
         legend:{
-            position:'right',
+            position:'left',
+            align:'start'
+           
            }
-    }}));
+    }})):setEmpty(true);
   
    }
    
   return<div className="chart-card">
     <h3>Stars per Language</h3>
+ 
     <div>
-    <canvas ref={donutRef} value={donutChart} id="donut-chart" > </canvas> 
+  {!isEmpty? <canvas ref={donutRef} value={donutChart} id="donut-chart" > </canvas>:<span className="no-chart-data">Oops No Stared Language!</span> }
      </div>
         </div>
 }

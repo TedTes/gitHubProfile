@@ -3,6 +3,7 @@ import {Chart} from 'react-chartjs-2';
 import colorsObj from '../colors.js'
 export default function BarChart({repoData}){
      const barCanvasRef=useRef(null)
+     const [isEmpty,setEmpty]=useState(false);
      const[barChart,setBarChart]=useState();
      const LIMIT=5;
     useEffect(()=>{
@@ -27,7 +28,6 @@ function drawBarChart(ctx,topStaredRepo){
 
    let staredRepo= topStaredRepo.map(dta=>dta.stargazers_count)
    let labels=topStaredRepo.map(dta=>dta.name)
-   
     let data={
         labels,
         datasets: [{
@@ -53,18 +53,18 @@ function drawBarChart(ctx,topStaredRepo){
                   // cornerRadius:3
               }
     }
-
+    staredRepo.reduce((sum,val)=>sum+val)!==0?
 setBarChart(new Chart(ctx, {
     type: 'bar',
     data: data,
     options:options
-}));
+})):setEmpty(true)
 }
     
 return<div className="chart-card">
       <h3>Most Starred</h3>
       <div>
-      <canvas id="bar-chart" ref={barCanvasRef} value={barChart}></canvas>
+    { !isEmpty?<canvas id="bar-chart" ref={barCanvasRef} value={barChart}></canvas>:<span className="no-chart-data">Oops No Stared Repos!</span>} 
      </div>
        </div>
 }

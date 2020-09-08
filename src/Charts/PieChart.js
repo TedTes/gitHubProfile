@@ -1,11 +1,13 @@
 
 import React,{useRef,useEffect,useState} from 'react';
 import {Chart} from 'react-chartjs-2';
+import { EndOfLineState } from 'typescript';
 
 
 export default function PieChart({languages}){
     const pieCanvasRef=useRef(null);
     const [pieChart,setPieChart]=useState({})
+    const [isEmpty,setEmpty]=useState(false)
 
     useEffect(()=>{
         let languageLabels,languageValues,languageColors;
@@ -30,24 +32,29 @@ export default function PieChart({languages}){
             }],
             labels:languageLabels
         }
-       setPieChart(new Chart(ctx, {
-            type: 'pie',
-            data: data,
-            responsive:true,
-            options: {
-                maintainAspectRatio: false ,
-                legend:{
-                    position:'right',
-                     }
-              }
-        
-        })
-       ); 
+        if(languageValues!==undefined){
+            languageValues.length!==0?
+            setPieChart(new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                responsive:true,
+                options: {
+                    maintainAspectRatio: false ,
+                    legend:{
+                        position:'left',
+                        align:'start'
+                    }
+                  }
+            
+            })
+           ):setEmpty(true)
+        }
+    
     }
       return<div className="chart-card">
             <h3>Top Languages</h3>
             <div>
-            <canvas id="pie-chart"  ref={pieCanvasRef}  value={pieChart} />
+           {!isEmpty?<canvas id="pie-chart"  ref={pieCanvasRef}  value={pieChart} />:<span className="no-chart-data">Oops No Languages!</span>}
             </div>
         
         </div>

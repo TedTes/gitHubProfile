@@ -59,9 +59,10 @@ return <div>
    { languages && <PieChart  languages={languages}/>} 
  {repoData && <BarChart   repoData={repoData}/>} 
  {repoData && <DoughnutChart repoData={repoData}/>} 
- <h3 style={{color:"black",position:"absolute",bottom:"-3.3em",left:"1em",fontSize:"1.2em"}}>Top Repos:</h3>
+
    </div>
  </div>
+  {/* <h3 style={{color:"black",position:"absolute",bottom:"-3.3em",left:"1em",fontSize:"1.2em"}}>Top Repos:</h3> */}
 {repoData && <Repos repoData={repoData}/>}
 </div>
 }

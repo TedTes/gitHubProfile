@@ -7,6 +7,10 @@ color:white;
 opacity:.5em;
 font-family: 'Nunito', sans-serif;
 background:#fafafa;
+overflow-x:hidden;
+  }
+  a{
+  text-decoration:none;
   }
 li{
   list-style:none;
@@ -14,7 +18,7 @@ li{
 }
 .home{
   background:#1b262c;
-  height:100vh;
+  height:88.8vh;
   position:relative;
   padding-top:4em;
 }
@@ -41,13 +45,13 @@ li{
 }
 .no-repo{
   background:#1b262c;
-  height:72.2vh;
-margin:0 auto;
-overflow:hidden;
-/* display:grid; */
-text-align:center;
-padding-top:5em;
-font-size:2em;
+  height:100vh;
+}
+.no-repo h4{
+  margin:0 auto;
+  text-align:center;
+  padding-top:5em;
+  font-size:2em;
 }
 .profile{
 display:flex;
@@ -86,7 +90,6 @@ font-size:1.3em;
   margin-top:5em;
   padding-top:1em;
   margin-right:.8em;
-  /* border:solid 2px white; */
   padding-right:0;
 
 }
@@ -109,25 +112,24 @@ img {
   border-radius:50%;
 }
 .chart-card {
-  width:400px;
-  border:solid 2px black;
+  width:280px;
+  position:relative;
   height:330px;
   border:solid #fafafa .7px;
   border-radius:10px;
   color:black;
-  margin:3em 1.4em ;
+  margin:60px auto;
   padding:2em;
   padding-bottom:4em;
   background:#fbfbfb;
   box-shadow: 0 4px .4px 1px rgba(0, 0, 0, 0.2), 0 0px .4px 0 rgba(0, 0, 0, 0.19);
+
 }
 .chart-card > div{
 height:270px;
 margin-top:3em;
 margin-left:-2em;
 }
-
-
 .chart-card > h3{
   position:relative;
   margin-top:0em;
@@ -144,41 +146,40 @@ margin-left:-2em;
   background:red;
   opacity:.8;
 }
-.chart-data {
-  background:#fafafa;
-  position:relative;
- height:500px;
- text-align:center;
- margin:0 auto;
-
-}
 .cards {
-position:absolute;
-left:4em;
-right:4em;
-  display:flex;
+ display:flex;
  margin-top:-6em;
+
 }
 .repo-container{
-position:relative;
+  position:relative;
   display:flex;
   flex-wrap:wrap;
-  margin:0 auto;
-  width:1110px;
+  margin:150px auto;
+  width:1200px;
   background:#fafafa;
 
+}
+.repo-container > h1{
+position:absolute;
+  color:#1b262c;
+  top:-3.5em;
 }
 .repo-container .repo-cards
 {
- padding:.6em .8em;
+padding:.6em .8em;
 display:grid;
-width:325px;
+width:358px;
 height:130px;
 margin:.5em;
-background:white;
-color:black;
+background:#dbdbdb;
+color:#1b262c;
 border-radius: 6px;
 padding-top:1em;
+}
+.repo-cards > span:nth-child(1){
+  font-weight:bold;
+  font-size:1.1em;
 }
 .sub-repo {
   display:flex;
@@ -188,4 +189,61 @@ padding-top:1em;
 }
 i{
 margin-bottom:.4em;
+padding-right:.4em;
+}
+.no-chart-data{
+  font-size:1.2em;
+  font-weight:bold;
+  opacity:.8;
+  margin-left:40px;
+  margin-top:200px;
+  position:absolute;
+  top:-1em;
+  color:red;
+}
+.footer{
+  background:black;
+  height:60px;
+}
+.footer > a{
+  display:flex;
+  align-items:center;
+  text-align:center;
+  color:white;
+    width:160px;
+    padding-top:1em;
+    margin:0 auto;
+ 
+}
+@media (max-width:780px){
+ 
+  .chart-card{
+    margin-top:-2em;
+    margin-bottom:70px;
+  }
+  .cards{
+    margin:unset;
+    margin:0 auto;
+    flex-direction:column;
+    width:90%;
+}
+
+  .repo-container{
+    flex-direction:column;
+    margin:150px auto;
+    width:400px;
+    background:#fafafa;
+  }
+}
+@media(min-width:780px) and (max-width:1180px){
+  .cards,.repo-container{
+   display:grid;
+   grid-template-columns: repeat(2,1fr);
+   width:800px;
+   margin-left:auto;
+   margin-right:auto;
+  }
+   .repo-container > h1{
+       left:4%;
+    }
 }
