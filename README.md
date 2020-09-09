@@ -1,4 +1,4 @@
 # gitHubProfile
 
 
-https://github.com/TedTes/gitHubProfile/blob/master/images/gitprofile-tedi.png
+![alt text](https://github.com/TedTes/gitHubProfile/blob/master/images/gitprofile-tedi.png)
